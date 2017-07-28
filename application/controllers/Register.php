@@ -42,6 +42,7 @@ class Register extends CI_Controller {
 			$password = $this->input->post('password');
 			$sponserUsername = $this->input->post('sponserUsername');
 			$placement1 = $this->input->post('placement');
+			$placement_id = $this->input->post('placement_id');
 
 			$this->form_validation->set_rules('username', 'Username', 'required');
 			$this->form_validation->set_rules('email', 'Email ID', 'required|valid_email');
@@ -93,7 +94,15 @@ class Register extends CI_Controller {
 					//echo "success3";
 					$placement = $placement1;
 				}
-				binary_tree_update($userid,$sponserid,$placement);
+
+				if($placement_id > 0)
+				{
+					$placementid=$placement_id;
+				}else
+				{
+					$placementid=$sponserid;
+				}
+				binary_tree_update($userid,$sponserid,$placement,$placementid);
 				
 				$email_data = array();
 				$template_data = array();

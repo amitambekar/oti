@@ -72,7 +72,7 @@ angular.module("MyApp", []).controller("MyController", function($scope,$http) {
                       <?php }else{ 
                         $secondLap = 0;
                         ?>
-                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $firstLap['username']; ?>?placement=left">
+                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $firstLap['username']; ?>?placement=left" target="_blank_">
                           <img src="<?= imagePathMyNetwork(array("default"),60,60); ?>" style="border:none"><br>
                         Add New </a> </td>
                       <?php } ?>
@@ -86,7 +86,7 @@ angular.module("MyApp", []).controller("MyController", function($scope,$http) {
                       <?php }else{ 
                         $secondLapRight = 0;
                        ?>
-                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $firstLap['username']; ?>?placement=right">
+                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $firstLap['username']; ?>?placement=right" target="_blank_">
                           <img src="<?= imagePathMyNetwork(array("default"),60,60); ?>" style="border:none"><br>
                         Add New </a> </td>
                       <?php } ?>
@@ -111,7 +111,7 @@ angular.module("MyApp", []).controller("MyController", function($scope,$http) {
                         <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/mynetwork?username=<?= $thirdLap['username']; ?>" id="<table width=300 border=0 cellpadding=5 z-index=100 cellspacing=1 bgcolor=#CCCCCC><tr><td width=120px height=10px bgcolor=#336699><font color=#FFFFFF><strong>Member Name</strong></font></td><td width=180px height=10px bgcolor=#336699><font color=#FFFFFF>Clay Alvares</font></td></tr><tr><td width=120px height=10px bgcolor=#336699><font color=#FFFFFF><strong>DOJ</strong></font></td><td width=180px height=10px bgcolor=#336699><font color=#FFFFFF>24-03-2017 10:24:41 AM</font></td></tr><tr><td width=120px height=10px bgcolor=#336699><font color=#FFFFFF><strong>Sponsor ID</strong></font></td><td width=180px height=10px bgcolor=#336699><font color=#FFFFFF>160307007008</font></td></tr><tr><td width=120px height=10px bgcolor=#336699><font color=#FFFFFF><strong>Total Left</strong></font></td><td width=180px height=10px bgcolor=#336699><font color=#FFFFFF>0</font></td></tr><tr><td width=120px height=10px bgcolor=#336699><font color=#FFFFFF><strong>Total Right</strong></font></td><td width=180px height=10px bgcolor=#336699><font color=#FFFFFF>0</font></td></tr></table>" onmouseover="getTip4(this)"> <img src="<?= imagePathMyNetwork($thirdLap['package_list'],60,60); ?>" style="border:none"> <br>
                         <?= $thirdLap['username']; ?> </a> </td>
                       <?php }else if($secondLap != 0){ ?>
-                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $secondLap['username']; ?>?placement=left">
+                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $firstLap['username']; ?>?placement=left&placement_id=<?= $secondLap['userid']; ?>" target="_blank_">
                             <img src="<?= imagePathMyNetwork(array("default"),60,60); ?>" style="border:none"><br>
                         Add New</a> </td>
                       <?php }else{ ?>
@@ -126,7 +126,7 @@ angular.module("MyApp", []).controller("MyController", function($scope,$http) {
                         <img src="<?= imagePathMyNetwork($thirdLap['package_list'],60,60); ?>" style="border:none"> <br>
                         <?= $thirdLap['username']; ?> </a> </td>
                       <?php }else if($secondLap != 0){ ?>
-                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $secondLap['username']; ?>?placement=right">
+                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $firstLap['username']; ?>?placement=right&placement_id=<?= $secondLap['userid']; ?>" target="_blank_">
                             <img src="<?= imagePathMyNetwork(array("default"),60,60); ?>" style="border:none"><br>
                         Add New</a> </td>
                       <?php }else{ ?>
@@ -141,7 +141,7 @@ angular.module("MyApp", []).controller("MyController", function($scope,$http) {
                         <img src="<?= imagePathMyNetwork($thirdLapRight['package_list'],60,60); ?>" style="border:none"> <br>
                         <?= $thirdLapRight['username']; ?> </a> </td>
                       <?php }else if($secondLapRight != 0){ ?>
-                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $secondLapRight['username']; ?>?placement=left">
+                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $firstLap['username']; ?>?placement=left&placement_id=<?= $secondLapRight['userid']; ?>" target="_blank_">
                             <img src="<?= imagePathMyNetwork(array("default"),60,60); ?>" style="border:none"><br>
                         Add New</a> </td>
                       <?php }else{ ?>
@@ -156,7 +156,7 @@ angular.module("MyApp", []).controller("MyController", function($scope,$http) {
                         <img src="<?= imagePathMyNetwork($thirdLapRight['package_list'],60,60); ?>" style="border:none"> <br>
                         <?= $thirdLapRight['username']; ?> </a> </td>
                       <?php }else if($secondLapRight != 0){ ?>
-                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $secondLapRight['username']; ?>?placement=right">
+                        <td style="min-width:100px" align="center"><a class="tree" href="<?= site_url(); ?>/register/<?= $firstLap['username']; ?>?placement=right&placement_id=<?= $secondLapRight['userid']; ?>" target="_blank_">
                           <img src="<?= imagePathMyNetwork(array("default"),60,60); ?>" style="border:none"><br>
                         Add New</a> </td>
                       <?php }else{ ?>

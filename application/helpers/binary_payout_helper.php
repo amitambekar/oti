@@ -102,7 +102,12 @@ class binaryTree{
 			{
 				$total = $row['total'];
 			}
-			return $total;	
+
+			if($total == "")
+			{
+				$total = 0;
+			}
+			return $total;
 		}
 
 		function getCarryForwardTotal($userid)
@@ -144,6 +149,8 @@ class binaryTree{
 				//dump($members);
 
 				$carry_forward_data = $this->getCarryForwardTotal($row['userid']);
+				//echo $row['userid'];
+				//dump($carry_forward_data);
 				if($carry_forward_data['placement'] == 'left')
 				{	
 					$left_income_total = $left_income_total + $carry_forward_data['carry_forward'];	
@@ -151,8 +158,8 @@ class binaryTree{
 				{
 					$right_income_total = $right_income_total + $carry_forward_data['carry_forward'];	
 				}
-
-				if($left_income_total > 0 && $right_income_total > 0)
+				//echo "||left_income_total:".$left_income_total."right_income_total:".$right_income_total."||";
+				if($left_income_total > 0 || $right_income_total > 0)
 				{
 					$carry_forward = 0;
 					$amt = 0;
@@ -173,12 +180,12 @@ class binaryTree{
 						$carry_forward = 0;
 						$amt = $left_income_total;
 					}
-					//echo "</br>amt=".$amt."perc=".$this->binary_payput_percentage."carry_forward=".$carry_forward."</br>";
+					//echo "</br>amount=".$amt."perc=".$this->binary_payput_percentage."carry_forward=".$carry_forward."</br>";
 					//dump($carry_forward);
 
 					$release_payment = $amt * ($this->binary_payput_percentage/100);
 					$insert_query = "INSERT INTO binary_income(userid,binary_total,left_binary_total,right_binary_total,carry_forward,placement,payout_status,created_date) VALUES(".$row['userid'].",".$release_payment.",".$left_income_total.",".$right_income_total.",".$carry_forward.",'".$placement."','generated','".date("Y-m-d")."')";
-					//echo $insert_query."</br>";
+					//echo "QUERY:".$insert_query."</br>";
 					mysqli_query($this->conn,$insert_query);
 				}
 				$this->reset_variables();
@@ -211,7 +218,8 @@ class binaryTree{
 
 		function calculate_binary_income($userid,$week_start,$week_end)
 		{
-			$select_query = "SELECT sum(binary_total) as total FROM binary_income WHERE userid='".$userid."' AND created_date >= '".$week_start."' AND created_date < DATE_ADD('".$week_end."', INTERVAL 1 DAY) AND payout_status='generated'";
+			//$select_query = "SELECT sum(binary_total) as total FROM binary_income WHERE userid='".$userid."' AND created_date >= '".$week_start."' AND created_date < DATE_ADD('".$week_end."', INTERVAL 1 DAY) AND payout_status='generated'";
+			$select_query = "SELECT sum(binary_total) as total FROM binary_income WHERE userid='".$userid."' AND payout_status='generated'";
 			//echo "BINARY INCOME = ".$select_query."<br>";
 			$result = mysqli_query($this->conn,$select_query);
 			$total = 0;
@@ -219,12 +227,17 @@ class binaryTree{
 			{
 				$total = $row['total'];
 			}
+			if($total == "")
+			{
+				$total = 0;
+			}
 			return $total;
 		}
 
 		function calculate_direct_income($userid,$week_start,$week_end)
 		{
-			$select_query = "SELECT sum(amount) as total FROM direct_comm WHERE userid='".$userid."' AND date >= '".$week_start."' AND date < DATE_ADD('".$week_end."', INTERVAL 1 DAY) AND status='generated'";
+			//$select_query = "SELECT sum(amount) as total FROM direct_comm WHERE userid='".$userid."' AND date >= '".$week_start."' AND date < DATE_ADD('".$week_end."', INTERVAL 1 DAY) AND status='generated'";
+			$select_query = "SELECT sum(amount) as total FROM direct_comm WHERE userid='".$userid."' AND status='generated'";
 			//echo "DIRECT INCOME = ".$select_query."<br>";
 			$result = mysqli_query($this->conn,$select_query);
 			$total = 0;
@@ -232,18 +245,24 @@ class binaryTree{
 			{
 				$total = $row['total'];
 			}
+			if($total == "")
+			{
+				$total = 0;
+			}
 			return $total;
 		}
 
 		function update_binary_income_status($userid,$week_start,$week_end)
 		{
-			$query = "UPDATE binary_income SET payout_status='billed' WHERE userid='".$userid."' AND created_date >= '".$week_start."' AND created_date < DATE_ADD('".$week_end."', INTERVAL 1 DAY)";
+			//$query = "UPDATE binary_income SET payout_status='billed' WHERE userid='".$userid."' AND created_date >= '".$week_start."' AND created_date < DATE_ADD('".$week_end."', INTERVAL 1 DAY)";
+			$query = "UPDATE binary_income SET payout_status='billed' WHERE userid='".$userid."' AND payout_status='generated'";
 			$result = mysqli_query($this->conn,$query);
 		}
 
 		function update_direct_income_status($userid,$week_start,$week_end)
 		{
-			$query = "UPDATE direct_comm SET status='billed' WHERE userid='".$userid."' AND date >= '".$week_start."' AND date < DATE_ADD('".$week_end."', INTERVAL 1 DAY)";
+			//$query = "UPDATE direct_comm SET status='billed' WHERE userid='".$userid."' AND date >= '".$week_start."' AND date < DATE_ADD('".$week_end."', INTERVAL 1 DAY)";
+			$query = "UPDATE direct_comm SET status='billed' WHERE userid='".$userid."' AND status='generated'";
 			$result = mysqli_query($this->conn,$query);
 		}
 
@@ -264,11 +283,9 @@ class binaryTree{
 				$total_package_amount = totalPackageAmount($row['userid']);
 				if($income > ($total_package_amount*$this->max_payout))
 				{
-					//echo "IF";
 					$payout_income = $total_package_amount;
 				}else
 				{
-					//echo "ELSE";
 					$payout_income = $income;
 				}
 
@@ -276,8 +293,8 @@ class binaryTree{
 				{
 					$insert_query = "INSERT INTO payout(userid,payout_amount,status,created_date) VALUES('".$row['userid']."',".$payout_income.",'generated','".date("Y-m-d H:i:s")."')";
 					mysqli_query($this->conn,$insert_query);
-					//$this->update_binary_income_status($row['userid'],$week_start,$week_end);
-					//$this->update_direct_income_status($row['userid'],$week_start,$week_end);
+					$this->update_binary_income_status($row['userid'],$week_start,$week_end);
+					$this->update_direct_income_status($row['userid'],$week_start,$week_end);
 				}
 			}
 		}

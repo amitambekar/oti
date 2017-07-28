@@ -47,7 +47,7 @@
     if($role_id == 1)
     {
     ?>
-    <a href="<?= site_url(); ?>/admin_home" class="log-out">Admin</a>
+    <a href="<?= site_url(); ?>/admin_home" class="log-out" target="_blank_">Admin</a>
     <?php } ?>
      <div class="clear"></div>
      </div>

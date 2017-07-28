@@ -1,13 +1,13 @@
 <?php
 $CI =& get_instance();
         
-function binary_tree_update($userid,$placementid,$place)
+function binary_tree_update($userid,$placementid,$place,$sponsorid)
 {
 	global $CI;
 	$CI->load->database();
 	$conn = mysqli_connect($CI->db->hostname, $CI->db->username, $CI->db->password,$CI->db->database);
 	
-	$updateQuery = "update users set sponsorid = ".$placementid." where userid='".$userid."'"; 
+	$updateQuery = "update users set sponsorid = ".$sponsorid." where userid='".$userid."'"; 
 	mysqli_query($conn,$updateQuery);
 	//for starting users
 	if($place == 'right')
