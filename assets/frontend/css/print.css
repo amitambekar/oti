@@ -343,7 +343,7 @@ box-shadow: 1px 3px 15px 6px rgba(209,207,209,1);background:#f9f8f8;}
 .nav-sec li span{float:left; margin-top:-7px}
 .marquee{border: 2px solid #021e58; padding: 22px 0; font-size: 17px; display: inherit;  width: 80%;  margin: 20px auto; background:#dfeaf0; color:#a30b01}
 
-#content{margin-left:190px; float:left; width:85.9%;}
+#content{margin-left:190px; float: left; width: 85.3%;}
 .bnr img{width:100%;}
 .bnrcap{width: 100%; background:#fcc8c5; overflow:hidden; padding:7px 0; border:4px solid #ef4e44; margin-bottom:1px;}
 .logo{width: 141px; float: left;}
@@ -434,6 +434,11 @@ ul.third-part h5{display:inline-block;}
 .info-sec{float:left; width:70%;}
 .info-sec p{color:#2f0401; font-size:16px; line-height:30px; text-align:justify;}
 .first-class{margin-top:50px;}
+
+.attorny-sec ul{text-align:center; margin:30px auto; margin-left:-5%}
+.attorny-sec li{ display: inline-block; margin-left: 5%; width: 40%; vertical-align: text-top; margin-bottom:25px}
+.attorny-sec li img{width:100%;}
+
 
 /*news*/
 .sec-1{border: 1px solid #ececec; background: #fff; padding: 10px; box-shadow: 1px 1px 2px 1px #ccc; width: 98%; margin: 0 auto 30px;}

@@ -12,19 +12,12 @@
     <div class="container">
       <div class="attorny-sec">
         <div class="container">
-          
-          <div class="attorny-1 first-class" style="width: 624px;margin: 50 auto;">
-              <img src="<?= imagePath('assets/frontend/images/msi/business_plan.jpg','',624,0); ?>"/>
-          </div>
-          <div class="attorny-1 first-class" style="width: 624px;margin: 50 auto;">
-              <img src="<?=base_url();?>timthumb.php?src=<?=base_url();?>assets/frontend/images/finance/1.jpg&w=600&q=99"/>
-          </div>
-          <div class="attorny-1" style="width: 624px;margin: 50 auto;">
-              <img src="<?=base_url();?>timthumb.php?src=<?=base_url();?>assets/frontend/images/finance/2.jpg&w=600&q=99"/>
-          </div>
-          <div class="attorny-1" style="width: 624px;margin: 50 auto;">
-              <img src="<?=base_url();?>timthumb.php?src=<?=base_url();?>assets/frontend/images/finance/3.jpg&w=600&q=99"/>
-          </div>
+          <ul class="reset">         
+              <li><img src="<?= imagePath('assets/frontend/images/msi/business_plan.jpg','',624,0); ?>"/></li>         
+              <li><img src="<?=base_url();?>timthumb.php?src=<?=base_url();?>assets/frontend/images/finance/1.jpg&w=600&q=99"/></li>     
+              <li><img src="<?=base_url();?>timthumb.php?src=<?=base_url();?>assets/frontend/images/finance/2.jpg&w=600&q=99"/></li>       
+              <li><img src="<?=base_url();?>timthumb.php?src=<?=base_url();?>assets/frontend/images/finance/3.jpg&w=600&q=99"/></li>
+          </ul>
           <div class="clear"></div>
         </div>
       </div>

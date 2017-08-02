@@ -28,7 +28,8 @@
             $(document).ready(function(){
                 $('.example-animation').DrSlider(); //Yes! that's it!
             });
-        </script>
+</script>
+     
 </head>
 <body ng-app="MyApp" ng-controller="MyController">
 <div class="admin-sec">
