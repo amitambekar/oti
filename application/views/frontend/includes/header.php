@@ -63,7 +63,7 @@
       <ul>
         <!-- inser more links here -->
         <?php if(isset($session_data['logged_in']['userid'])){ ?>
-        <li><a href="<?php echo site_url(); ?>dashboard">Dashboard</a></li>
+        <li><a href="<?php echo site_url(); ?>profile">Profile</a></li>
         <li><a href="<?php echo site_url(); ?>logout">Logout</a></li>
         <?php }else{ ?>
         <li><a data-toggle="modal" data-target="#login_modal">Login</a></li>
