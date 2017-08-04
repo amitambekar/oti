@@ -25,7 +25,7 @@ class Login_model extends CI_Model
                 {
                     return 'email_verified';
                 }
-                $data = array('logged_in'=>array(
+                $data = array('oti_logged_in'=>array(
 							'userid'=>$row->userid,
                             'email'=> $row->email,
 							'password'=> $row->password,

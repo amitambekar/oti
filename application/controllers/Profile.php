@@ -33,7 +33,7 @@ class Profile extends CI_Controller {
 			$status = '';
 			$message = '';
 			$session_data = $this->session->userdata;
-			$userid = $session_data['logged_in']['userid'];
+			$userid = $session_data['oti_logged_in']['userid'];
 		
 			$firstname = $this->input->post('firstname');
 			$middlename = $this->input->post('middlename');
@@ -127,7 +127,7 @@ class Profile extends CI_Controller {
 			$status = '';
 			$message = '';
 			$session_data = $this->session->userdata;
-			$userid = $session_data['logged_in']['userid'];
+			$userid = $session_data['oti_logged_in']['userid'];
 		
 			$country = $this->input->post('country');
 			$state = $this->input->post('state');
@@ -171,7 +171,7 @@ class Profile extends CI_Controller {
 			$status = '';
 			$message = '';
 			$session_data = $this->session->userdata;
-			$userid = $session_data['logged_in']['userid'];
+			$userid = $session_data['oti_logged_in']['userid'];
 		
 			$bank_account_holder_name = $this->input->post('bank_account_holder_name');
 			$bank_name = $this->input->post('bank_name');
@@ -215,7 +215,7 @@ class Profile extends CI_Controller {
 			$status = '';
 			$message = '';
 			$session_data = $this->session->userdata;
-			$userid = $session_data['logged_in']['userid'];
+			$userid = $session_data['oti_logged_in']['userid'];
 		
 			$pancard = $this->input->post('pancard');
 			$aadhaar_card = $this->input->post('aadhaar_card');
@@ -350,7 +350,7 @@ class Profile extends CI_Controller {
 			$status = '';
 			$message = '';
 			$session_data = $this->session->userdata;
-			$userid = $session_data['logged_in']['userid'];
+			$userid = $session_data['oti_logged_in']['userid'];
 		
 			$current_password = $this->input->post('current_password');
 			$new_password = $this->input->post('new_password');
@@ -395,7 +395,7 @@ class Profile extends CI_Controller {
 		$message = '';
 	
 		$session_data = $this->session->userdata;
-		$userid = $session_data['logged_in']['userid'];
+		$userid = $session_data['oti_logged_in']['userid'];
 		$data = getUserInfo($userid);
 		
 		if(count($data) > 0)
@@ -420,7 +420,7 @@ class Profile extends CI_Controller {
 			$status = '';
 			$message = '';
 			$session_data = $this->session->userdata;
-			$userid = $session_data['logged_in']['userid'];
+			$userid = $session_data['oti_logged_in']['userid'];
 		
 			$placement = $this->input->post('placement');
 			

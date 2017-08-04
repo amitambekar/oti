@@ -37,7 +37,7 @@ class Bonus extends CI_Controller {
 	public function get_bonus()
 	{
 		$session_data = $this->session->userdata;
-		$userid = $session_data['logged_in']['userid'];
+		$userid = $session_data['oti_logged_in']['userid'];
 		$total =  getBonus($userid,false);
 	}
 }

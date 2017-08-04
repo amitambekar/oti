@@ -47,7 +47,7 @@
     </thead>
     <tbody>
       <?php 
-      $userid = $session_data['logged_in']['userid'];
+      $userid = $session_data['oti_logged_in']['userid'];
       $wherein = "package_id NOT IN (select package_id from user_packages WHERE userid ='".$userid."' group by package_id)";
       $package_list=getPackages(0,array('package_status'=>'active'),$wherein); ?>
       <?php 

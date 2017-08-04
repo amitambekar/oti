@@ -160,7 +160,7 @@
                         </ul>
                     </li>-->
                     <li class="dropdown">
-                        <?php $username = $session_data['logged_in']['username']; ?>
+                        <?php $username = $session_data['oti_logged_in']['username']; ?>
                         <a data-toggle="dropdown" class="dropdown-toggle navbar-user" href="javascript:;">
                             <img class="img-circle" src="<?php echo base_url(); ?>/assets/admin/demo/images/profile.jpg">
                             <span class="hidden-xs"><?= $username; ?></span>

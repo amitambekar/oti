@@ -41,7 +41,7 @@ function googleTranslateElementInit() {
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<?php if(isset($session_data['logged_in'])) { ?>
+<?php if(isset($session_data['oti_logged_in'])) { ?>
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){

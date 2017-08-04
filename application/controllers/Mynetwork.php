@@ -24,7 +24,7 @@ class Mynetwork extends CI_Controller {
 		$username = $this->input->get('username');
 		if($username == '')
 		{
-			$username = $session_data['logged_in']['username'];
+			$username = $session_data['oti_logged_in']['username'];
 		}
 		$data = array();
 		$data['session_data'] = $session_data;

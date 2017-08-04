@@ -62,7 +62,7 @@
     <nav class="main-nav">
       <ul>
         <!-- inser more links here -->
-        <?php if(isset($session_data['logged_in']['userid'])){ ?>
+        <?php if(isset($session_data['oti_logged_in']['userid'])){ ?>
         <li><a href="<?php echo site_url(); ?>profile">Profile</a></li>
         <li><a href="<?php echo site_url(); ?>logout">Logout</a></li>
         <?php }else{ ?>

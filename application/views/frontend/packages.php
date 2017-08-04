@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <?php $userPackagesList = getUserPackages($session_data['logged_in']['userid']); ?>
+      <?php $userPackagesList = getUserPackages($session_data['oti_logged_in']['userid']); ?>
       <?php foreach($userPackagesList as $upl){ ?>
       <?php //dump($upl); ?>
       <tr>

@@ -25,7 +25,7 @@
   <div class="nav-sec">
     <?php $controller_name = $this->uri->segment(1); ?>
     <ul>
-      <?php $username = $session_data['logged_in']['username']; 
+      <?php $username = $session_data['oti_logged_in']['username']; 
       $user_info = getUserInfo(0,$username);
       $profile_image = $user_info['profile_image'] != '' ? $user_info['profile_image'] : 'person.png';
       ?>
@@ -44,7 +44,7 @@
     <div class="content">
     <div class="logout-sec">
     <a href="<?= site_url(); ?>/logout" class="log-out">Log Out</a>
-    <?php $role_id = $session_data['logged_in']['role_id']; 
+    <?php $role_id = $session_data['oti_logged_in']['role_id']; 
     if($role_id == 1)
     {
     ?>
@@ -62,7 +62,7 @@
       </div>
     </div>
     <?php 
-    $packages = getUserPackages($session_data['logged_in']['userid']);
+    $packages = getUserPackages($session_data['oti_logged_in']['userid']);
     $pack = array();
     foreach($packages as $row)
     {

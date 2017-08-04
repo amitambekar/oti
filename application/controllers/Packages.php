@@ -63,7 +63,7 @@ class Packages extends CI_Controller {
 			$status = '';
 			$message = '';
 			$session_data = $this->session->userdata;
-			$userid = $session_data['logged_in']['userid'];
+			$userid = $session_data['oti_logged_in']['userid'];
 		
 			$package_id = $this->input->post('package_id');
 			$payment_details = $this->input->post('payment_details');

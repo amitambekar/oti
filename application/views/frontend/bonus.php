@@ -6,7 +6,7 @@
         <br/>
         <h5>
         <?php 
-      		$userid = $session_data['logged_in']['userid'];
+      		$userid = $session_data['oti_logged_in']['userid'];
     		$total =  getBonus($userid,true);
     		echo "₹ ".sprintf("%02d", $total); 
 		?>
@@ -16,7 +16,7 @@
         </button>
 
         <?php 
-            $userid = $session_data['logged_in']['userid'];
+            $userid = $session_data['oti_logged_in']['userid'];
             $user_payment_details =  user_payment_details($userid);
         ?>
         <button class="accordion" style="width: 42%;">
