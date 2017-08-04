@@ -54,6 +54,7 @@
           <li><a href="<?php echo site_url(); ?>bankers" class="hvr-rectangle-out">Bankers</a></li>
           <li><a href="<?php echo site_url(); ?>faqs" class="hvr-rectangle-out">FAQ's</a></li>
           <li><a href="<?php echo site_url(); ?>contact_us" class="hvr-rectangle-out">Contact Us</a></li>
+		  <li><a href="<?php echo site_url(); ?>contact_us" class="hvr-rectangle-out">Trader</a></li>
           </ul>
         <div class="clear"></div>
       </div>
