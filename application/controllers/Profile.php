@@ -81,7 +81,7 @@ class Profile extends CI_Controller {
 		        {
 		        	$this->load->library('upload');
 				    $config['upload_path'] = FCPATH . 'uploads/profile/';
-				    $config['allowed_types'] = 'gif|jpg|png';
+				    $config['allowed_types'] = 'gif|jpg|png|JPG';
 				    $files = $_FILES['profile_image'];	
 		        	$_FILES['uploadedimage']['name'] = time().'_'.rand(1111,9999).'_'.$files['name'];
 			        $_FILES['uploadedimage']['type'] = $files['type'];
@@ -275,7 +275,7 @@ class Profile extends CI_Controller {
 		        {
 		        	$this->load->library('upload');
 				    $config['upload_path'] = FCPATH . 'uploads/documents/';
-				    $config['allowed_types'] = 'gif|jpg|png';
+				    $config['allowed_types'] = 'gif|jpg|png|JPG';
 				    $files = $_FILES['pancard_image'];	
 		        	$_FILES['uploadedimage']['name'] = time().'_'.rand(1111,9999).'_'.$files['name'];
 			        $_FILES['uploadedimage']['type'] = $files['type'];
@@ -304,7 +304,7 @@ class Profile extends CI_Controller {
 		        {
 		        	$this->load->library('upload');
 				    $config['upload_path'] = FCPATH . 'uploads/documents/';
-				    $config['allowed_types'] = 'gif|jpg|png';
+				    $config['allowed_types'] = 'gif|jpg|png|JPG';
 				    $files = $_FILES['aadhaar_card_image'];	
 		        	$_FILES['uploadedimage']['name'] = time().'_'.rand(1111,9999).'_'.$files['name'];
 			        $_FILES['uploadedimage']['type'] = $files['type'];
