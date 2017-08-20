@@ -7,7 +7,7 @@ function dump($data)
 	echo '</pre>';
 }
 
-function curl_request($url,$method,$useragent)
+function curl_request($url,$method,$useragent,$post_data=array())
 {
 	// Get cURL resource
 	$curl = curl_init();
@@ -21,7 +21,7 @@ function curl_request($url,$method,$useragent)
 	{
 		$data[CURLOPT_POST] = 1;	
 	}
-	$data[CURLOPT_POSTFIELDS] = array();
+	$data[CURLOPT_POSTFIELDS] = $post_data;
 
 	curl_setopt_array($curl, $data);
 	// Send the request & save response to $resp
@@ -110,6 +110,16 @@ function imagePathMyNetwork($package_list,$width = 70,$height=70)
 		$color = 'male-icon-1.png';
 	}
 	if(in_array(3, $package_list))
+	{
+		$color = 'male-icon2.png';
+	}
+
+	if(in_array(4, $package_list))
+	{
+		$color = 'male-icon2.png';
+	}
+
+	if(in_array(6, $package_list))
 	{
 		$color = 'male-icon2.png';
 	}
