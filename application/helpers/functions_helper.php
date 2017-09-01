@@ -69,6 +69,26 @@ function send_email($data = array()) {
 	//print_r($CI->email->print_debugger());
 }
 
+function send_sms($mobileNumber,$message)
+{
+	global $CI;
+    $message = urlencode($message);
+    //Prepare you post parameters
+    $authKey = "170760Awq16uWKNK0j599947b0";
+    $senderId = "ONLINE";
+    $route = "transactional";
+    $postData = array(
+        'authkey' => $authKey,
+        'mobiles' => $mobileNumber,
+        'message' => $message,
+        'sender' => $senderId,
+        'route' => $route
+    );
+    $url="https://control.msg91.com/api/sendhttp.php";
+    dump(curl_request($url,"POST","MSG 91",$postData));
+}
+
+#send_sms("917741823310","hello");
 function responseObject($response = array(),$status_code=200)
 {
 	http_response_code($status_code);
