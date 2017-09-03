@@ -84,8 +84,13 @@ function send_sms($mobileNumber,$message)
         'sender' => $senderId,
         'route' => $route
     );
-    $url="https://control.msg91.com/api/sendhttp.php";
-    dump(curl_request($url,"POST","MSG 91",$postData));
+    $url="https://control.msg91.com/api/sendhttp.php";    
+    $result = 'Mobile Number not valid';
+    if(strlen($mobileNumber) > 5)
+    {
+    	//$result = curl_request($url,"POST","MSG 91",$postData);
+    }
+   	return $result;
 }
 
 #send_sms("917741823310","hello");
@@ -191,11 +196,19 @@ function checkUsernameExists($username)
 	return $result;	
 }
 
-function checkEmailIDExists($email)
+function checkEmailIDExists($tablename,$email)
 {
 	global $CI;
 	$CI->load->model('Common_model');
-	$result = $CI->Common_model->checkEmailIDExists($email);
+	$result = $CI->Common_model->checkExists($tablename,$email);
+	return $result;	
+}
+
+function checkMobileNumberExists($tablename,$mobile)
+{
+	global $CI;
+	$CI->load->model('Common_model');
+	$result = $CI->Common_model->checkExists($tablename,$mobile);
 	return $result;	
 }
 
