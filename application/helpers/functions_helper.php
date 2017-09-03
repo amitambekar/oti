@@ -85,7 +85,17 @@ function imagePath($path,$image_type,$width = 70,$height=70)
 	{
 		$path = 'uploads/packages/'.$path;
 	}
-	return base_url('timthumb.php?src='.base_url($path).'&w='.$width.'&h='.$height);
+	$h = '';
+	$w = '';
+	if($height > 0)
+	{
+		$h = "&h=".$height;
+	}
+	if($width > 0)
+	{
+		$w = "&w=".$width;
+	}
+	return base_url('timthumb.php?src='.base_url($path).$w.$h);
 	//return base_url('uploads/'.$path);
 }
 

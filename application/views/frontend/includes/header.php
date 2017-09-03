@@ -42,9 +42,9 @@
           <li class="dropdown">
               <button class="dropbtn hvr-rectangle-out">Trading</button>
               <ul class="dropdown-content">
-                  <a href="#">Algo Trade</a>
+                  <a href="<?php echo site_url(); ?>/algo_trade">Algo Trade</a>
                   <a data-toggle="modal" data-target="#zerodha_modal">Zerodha</a>
-                  <a href="http://record.binary.com/_eS213wp_cXxTD9wuhZQfkmNd7ZgqdRLk/1/" target="_blank_">Option Trading</a>
+                  <!--<a href="http://record.binary.com/_eS213wp_cXxTD9wuhZQfkmNd7ZgqdRLk/1/" target="_blank_">Option Trading</a>-->
               </ul>
            </li>
           <li><a href="<?php echo site_url(); ?>/about_us" class="hvr-rectangle-out">About Us</a></li>

@@ -113,7 +113,7 @@ class binaryTree{
 		function getCarryForwardTotal($userid)
 		{
 			$data = array("carry_forward"=>0,"placement"=>"");
-			$query = "SELECT * FROM binary_income WHERE userid = ".$userid." ORDER BY created_date limit 1";
+			$query = "SELECT * FROM binary_income WHERE userid = ".$userid." ORDER BY created_date DESC limit 1";
 			$result = mysqli_query($this->conn,$query);
 			while($row = mysqli_fetch_array($result))
 			{

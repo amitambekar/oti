@@ -57,7 +57,7 @@
         <div class="clear"></div>
       </div>
     </div>
-    <h3>Our Partners</h3>
+    <!--<h3>Our Partners</h3>
     <div class="btm_sec">
     	<div class="container">
           <ul class="reset">
@@ -66,7 +66,7 @@
             </ul>
            <div class="clear"></div>
     	</div>
-    </div>
+    </div>-->
   </div>
   <div class="bg-sec">
     <div class="form_sec">
